@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.content-header {
+    position: relative;
+    padding: 12px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #e1e6ef;
+    margin-bottom: 20px;
+}
+.card-header {
+    color: #374767;
+    background-color: #fff;
+    border-color: #e4e5e7;
+    position: relative;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e4e5e7;
+}
+.panel-bd {
+    border: 1px solid #e1e6ef;
+}
+.main-panel .main-content {
+
+    background-color: #f1f3f6!important;
+}
+
+

@@ -1,0 +1,64 @@
+<div class="main-content">
+        <div class="container-fluid">
+
+<div class="row">
+        <div class="col-sm-12">
+            <div class="card panel-bd lobidrag">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h4>Add Customer </h4>
+                    </div>
+                </div>
+              <form  (ngSubmit)="onSubmit() "#customerForm="ngForm" >
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label for="customer_name" class="col-sm-3 col-form-label">Customer Name <i class="text-danger">*</i></label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="customer_name" [(ngModel)]="customerDetails.customerName" id="customer_name" type="text" placeholder="Customer Name" required="" tabindex="1" autocomplete="off">
+                        </div>
+                    </div>
+
+                       <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">Customer Email</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="email" id="email"[(ngModel)]="customerDetails.emailId" type="email" placeholder="Customer Email" tabindex="2" autocomplete="off"> 
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="mobile" class="col-sm-3 col-form-label">Customer Mobile</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="mobile" id="mobile"[(ngModel)]="customerDetails.mobileNumber" type="text" placeholder="Customer Mobile" min="0" tabindex="3" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="address " class="col-sm-3 col-form-label">Customer Address</label>
+                        <div class="col-sm-6">
+                                <input class="form-control" name="mobile" id="mobile"[(ngModel)]="customerDetails.address" type="text" placeholder="Customer Address" min="0" tabindex="3" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="previous_balance" class="col-sm-3 col-form-label">Previous Balance</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="previous_balance" id="previous_balance"[(ngModel)]="customerDetails.previouBalance" type="number" placeholder="Previous Balance" tabindex="5" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-sm-4 col-form-label"></label>
+                        <div class="col-sm-6">
+                            <input type="submit" id="add-customer" class="btn btn-primary btn-large" name="add-customer" value="Save" tabindex="7" autocomplete="off">
+                            <input type="button" value="Reset" (click)="resetForm()" name="add-customer-another" class="btn btn-large btn-success" tabindex="6" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                </form>                </div>
+        </div>
+</div>
+
+   
+</div>
+</div>

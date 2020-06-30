@@ -1,0 +1,61 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+ <!-- edit form start -->
+ <div class="row">
+        <div class="col-sm-12">
+            <div class="card panel-bd lobidrag">
+                <div class="card-header">
+                    <div class="panel-title">
+                        <h4> Edit Customer  </h4>
+                    </div>
+                </div>
+              <form  (ngSubmit)="onSubmit()"#customerEditForm="ngForm" class="form-vertical" id="customer_update" >
+                <div class="card-body">
+
+                    <div class="form-group row">
+                        <label for="customer_name" class="col-sm-3 col-form-label">Customer Name <i class="text-danger">*</i></label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="customer_name" id="customer_name" [(ngModel)]="customerDetails.name" type="text" placeholder="Customer Name" required="" value="Abul Malek" tabindex="1" autocomplete="off">
+                             <!-- <input type="hidden"  name="oldname" autocomplete="off"> -->
+                        </div>
+                    </div>
+
+                       <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">Customer Email</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="email"  id="email" [(ngModel)]="customerDetails.emailId" type="email" placeholder="Customer Email" tabindex="2" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="mobile" class="col-sm-3 col-form-label">Customer Mobile</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" name="mobile"  id="mobile"[(ngModel)]="customerDetails.mobileNumber" type="text" placeholder="Customer Mobile" min="0" tabindex="3" autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="address " class="col-sm-3 col-form-label">Customer Address</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" name="address" id="address " [(ngModel)]="customerDetails.address" rows="3" placeholder="Customer Address" tabindex="4" autocomplete="off">   </textarea>
+                        </div>
+                    </div>
+                    <!-- <input type="hidden" value="2" name="customer_id" autocomplete="off"> -->
+
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-sm-4 col-form-label"></label>
+                        <div class="col-sm-6">
+                            <input type="submit" id="add-Customer" class="btn btn-success btn-large" name="add-Customer" value="Save " tabindex="5" autocomplete="off">
+                            <input type="button" (click)="backToCustomerList()" id="cancel" class="btn btn-success btn-large" name="cancel" value="Cancle" tabindex="5" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                </form>                </div>
+        </div>
+    </div>
+<!-- edit form end -->
+
+
+    </div>
+</div>

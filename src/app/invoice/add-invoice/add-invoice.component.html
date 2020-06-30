@@ -1,0 +1,283 @@
+<div class="main-content">
+    <div class="container-fluid">
+            <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card panel-bd lobidrag">
+                            <div class="card-header">
+                                <div class="panel-title">
+                                    <h4>New Invoice</h4>
+                                </div>
+                            </div>
+                             <form action="https://pharmacyv5.bdtask.com/pharmacare_v9.2_demo/Cinvoice/manual_sales_insert" class="form-vertical" id="insert_sale" name="" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6" id="payment_from_1">
+                                        <div class="form-group row">
+                                            <label for="customer_name" class="col-sm-3 col-form-label">Customer Name <i class="text-danger">*</i></label>
+                                            <div class="col-sm-6">
+                                                    <input type="text" name="customer_name" class=" form-control" placeholder="Customer Name/Phone" id="customer_name" tabindex="1" onkeyup="customer_autocomplete()" value="Walking Customer" required="" autocomplete="off">
+        
+                                                <input id="autocomplete_customer_id" class="customer_hidden_value abc" type="hidden" name="customer_id" value="1" autocomplete="off">
+                                            </div>
+                                            <div class=" col-sm-3">
+                                                <input id="myRadioButton_1" type="button" onclick="active_customer('payment_from_1')" class="btn btn-success checkbox_account ac" name="customer_confirm" checked="checked" value="New Customer" tabindex="2" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-sm-8" id="payment_from_2">
+                                       <div class="form-group row">
+                                            <label for="customer_name_others" class="col-sm-3 col-form-label">Payee Name <i class="text-danger">*</i></label>
+                                            <div class="col-sm-6">
+                                                <input autofill="off" type="text" size="100" name="customer_name_others" placeholder="Payee Name" id="customer_name_others" class="form-control" autocomplete="off">
+                                            </div>
+        
+                                            <div class="col-sm-3">
+                                                <input onclick="active_customer('payment_from_2')" type="button" id="myRadioButton_2" class="checkbox_account btn btn-success" name="customer_confirm_others" value="Old Customer" autocomplete="off">
+                                            </div>
+                                        </div>
+        
+                                        <div class="form-group row">
+                                            <label for="customer_name_others_address" class="col-sm-3 col-form-label">Address </label>
+                                            <div class="col-sm-6">
+                                               <input type="text" size="100" name="customer_name_others_address" class=" form-control" placeholder="Address" id="customer_name_others_address" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-sm-6" id="payment_from">
+                                        <div class="form-group row">
+                                            <label for="payment_type" class="col-sm-4 col-form-label">Payment Type <i class="text-danger">*</i></label>
+                                            <div class="col-sm-8">
+                                                <select name="paytype" class="form-control select2-hidden-accessible" required="" onchange="bank_paymet(this.value)" tabindex="-1" aria-hidden="true" autocomplete="off">
+                                                    <option value="1">Cash Payment</option>
+                                                    <option value="2">Bank Payment</option> 
+                                                </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 316px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-paytype-dz-container"><span class="select2-selection__rendered" id="select2-paytype-dz-container" title="Cash Payment"><span class="select2-selection__clear">×</span>Cash Payment</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                              
+        
+                                             
+                                            </div>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group row">
+                                            <label for="date" class="col-sm-3 col-form-label">Date <i class="text-danger">*</i></label>
+                                            <div class="col-sm-6">
+                                                                                       <input class="datepicker form-control hasDatepicker" type="text" size="50" name="invoice_date" id="date" required="" value="2020-06-20" tabindex="6" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <div class="col-sm-6" id="bank_div" style="display: none;">
+                                    <div class="form-group row">
+                                        <label for="bank" class="col-sm-4 col-form-label">Bank <i class="text-danger">*</i></label>
+                                        <div class="col-sm-8">
+                                           <select name="bank_id" class="form-control select2-hidden-accessible" id="bank_id" tabindex="-1" aria-hidden="true" autocomplete="off">
+                                                <option value="">Select Location</option>
+                                                                                            <option value="UXQV7V6U66">AB Bank</option>
+                                                                                            <option value="7QHLEH2P6E">World Bank</option>
+                                                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-bank_id-container"><span class="select2-selection__rendered" id="select2-bank_id-container"><span class="select2-selection__placeholder">Select option</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                         
+                                        </div>
+                                     
+                                    </div>
+                                </div>
+                                </div>
+        
+                                <div class="table-responsive" style="margin-top: 10px">
+                                    <table class="table table-bordered table-hover" id="normalinvoice">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="width: 220px">Item Information <i class="text-danger">*</i></th>
+                                                <th class="text-center" width="130">Batch<i class="text-danger">*</i></th>
+                                                <th class="text-center">Ava.Qty</th>
+                                                <th class="text-center" width="120">Expiry</th>
+                                                <th class="text-center" width="100">Unit</th>
+                                                <th class="text-center" width="70">Qty <i class="text-danger">*</i></th>
+                                                <th class="text-center" width="100">Price <i class="text-danger">*</i></th>
+        
+                                                                                        <th class="text-center">Discount %</th>
+                                                
+                                                <th class="text-center" width="110">Total                                        </th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="addinvoiceItem">
+                                            <tr>
+                                                <td style="width: 220px">
+                                                    <input type="text" name="product_name" onkeyup="invoice_productList(1);" onkeypress="invoice_productList(1);" class="form-control productSelection" placeholder="Medicine Name" required="" id="product_name_1" tabindex="7" autocomplete="off">
+        
+                                                    <input type="hidden" class="autocomplete_hidden_value product_id_1" name="product_id[]" id="product_id_1" autocomplete="off">
+        
+                                                    <input type="hidden" class="baseUrl" value="https://pharmacyv5.bdtask.com/pharmacare_v9.2_demo/" autocomplete="off">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2-hidden-accessible" id="batch_id_1" name="batch_id[]" onchange="product_stock(1)" tabindex="-1" required="required" aria-hidden="true" autocomplete="off">
+                                                        <option></option>
+                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 104px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="8" aria-labelledby="select2-batch_id_1-container"><span class="select2-selection__rendered" id="select2-batch_id_1-container"><span class="select2-selection__placeholder">Select option</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="available_quantity[]" class="form-control text-right available_quantity_1" value="0" readonly="" id="available_quantity_1" autocomplete="off">
+                                                </td>
+                                                <td id="expire_date_1">
+        
+                                                </td>
+                                                <td>
+                                                    <input name="" id="" class="form-control text-right unit_1 valid" value="None" readonly="" aria-invalid="false" type="text" autocomplete="off">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="product_quantity[]" onkeyup="quantity_calculate(1),checkqty(1);" onchange="quantity_calculate(1);" class="total_qntt_1 form-control text-right" id="total_qntt_1" placeholder="0.00" min="0" tabindex="9" required="" autocomplete="off">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="product_rate[]" id="price_item_1" class="price_item1 price_item form-control text-right" tabindex="10" required="" onkeyup="quantity_calculate(1),checkqty(1);" onchange="quantity_calculate(1);" placeholder="0.00" min="0" readonly="" autocomplete="off">
+                                                </td>
+                                                <!-- Discount -->
+                                                <td>
+                                                    <input type="text" name="discount[]" onkeyup="quantity_calculate(1),checkqty(1);" onchange="quantity_calculate(1);" id="discount_1" class="form-control text-right" min="0" tabindex="11" placeholder="0.00" autocomplete="off">
+        
+                                                    <input type="hidden" value="" name="discount_type" id="discount_type_1" autocomplete="off">
+                                                </td>
+        
+        
+                                                <td style="width: 100px">
+                                                    <input class="total_price form-control text-right" type="text" name="total_price[]" id="total_price_1" value="0.00" readonly="readonly" autocomplete="off">
+                                                </td>
+        
+                                                <td>
+                                                    <!-- Tax calculate start-->
+                                                                                                          <input id="total_tax0_1" class="total_tax0_1" type="hidden" autocomplete="off">
+                                                    <input id="all_tax0_1" class="total_tax0" type="hidden" name="tax[]" autocomplete="off">
+                                                   
+                                                    <!-- Tax calculate end-->
+        
+                                                    <!-- Discount calculate start-->
+                                                   
+                                                                                                <input id="total_tax1_1" class="total_tax1_1" type="hidden" autocomplete="off">
+                                                    <input id="all_tax1_1" class="total_tax1" type="hidden" name="tax[]" autocomplete="off">
+                                                   
+                                                    <!-- Tax calculate end-->
+        
+                                                    <!-- Discount calculate start-->
+                                                   
+                                                                                                <!-- Tax calculate end-->
+        
+                                                    <!-- Discount calculate start-->
+                                                    <input type="hidden" id="total_discount_1" class="" autocomplete="off">
+                                                    <input type="hidden" id="all_discount_1" class="total_discount dppr" autocomplete="off">
+                                                    <!-- Discount calculate end -->
+        
+                                                  <button style="text-align: right;" class="btn btn-info" type="button" onclick="addInputField('addinvoiceItem');" tabindex="12" id="add_invoice_item" autocomplete="off"><i class="fa fa-plus"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+        
+                                        <tfoot>
+                                            
+                                            <tr>
+                                                <td colspan="7" rowspan="2">
+                                                <center><label style="text-align:center;" for="details" class="  col-form-label">Invoice Details</label></center>
+                                                <textarea name="inva_details" class="form-control" placeholder="Invoice Details" autocomplete="off"></textarea>
+                                            </td>
+                                                <td style="text-align:right;" colspan="1"><b>Invoice Discount:</b></td>
+                                                <td class="text-right">
+                                                    <input type="text" id="invdcount" class="form-control text-right" name="invdcount" onkeyup="calculateSum(),checknum();" onchange="calculateSum()" placeholder="0.00" autocomplete="off">
+                                                   
+                                                </td>
+                                                <td> 
+                                                    
+        
+                                                </td>
+                                            </tr>
+        
+                                            <tr>
+                                                <td colspan="1" style="text-align:right;"><b>Total Discount:</b></td>
+                                                <td class="text-right">
+                                                   <input type="text" id="total_discount_ammount" class="form-control text-right" name="total_discount" value="0.00" readonly="readonly" autocomplete="off">
+                                                      <input type="hidden" name="baseUrl" class="baseUrl" value="https://pharmacyv5.bdtask.com/pharmacare_v9.2_demo/" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                                                                     <tr class="hideableRow hiddenRow">
+                                               
+                                        <td style="text-align:right;" colspan="8"><b>Tax</b></td>
+                                        <td class="text-right">
+                                            <input id="total_tax_amount0" tabindex="-1" class="form-control text-right valid totalTax" name="total_tax0" value="0.00" readonly="readonly" aria-invalid="false" type="text" autocomplete="off">
+                                        </td>
+                                       
+                                       
+                                         
+                                        </tr>
+                                                                        <tr class="hideableRow hiddenRow">
+                                               
+                                        <td style="text-align:right;" colspan="8"><b>Vat</b></td>
+                                        <td class="text-right">
+                                            <input id="total_tax_amount1" tabindex="-1" class="form-control text-right valid totalTax" name="total_tax1" value="0.00" readonly="readonly" aria-invalid="false" type="text" autocomplete="off">
+                                        </td>
+                                       
+                                       
+                                         
+                                        </tr>
+                                                                  <tr>
+                                                 
+                                                <td style="text-align:right;" colspan="8"><b>Total Tax:</b></td>
+                                                <td class="text-right">
+                                                    <input id="total_tax_amount" tabindex="-1" class="form-control text-right valid" name="total_tax" value="0.00" readonly="readonly" aria-invalid="false" type="text" autocomplete="off">
+                                                </td>
+                                                 <td><button type="button" class="toggle btn-warning" autocomplete="off">
+                        <i class="fa fa-angle-double-down"></i>
+                      </button></td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td colspan="8" style="text-align:right;"><b>Grand Total:</b></td>
+                                                <td class="text-right">
+                                                     <input type="text" id="grandTotal" class="form-control text-right" name="grand_total_price" value="0.00" readonly="readonly" autocomplete="off">
+                                                      <input type="hidden" id="txfieldnum" value="2" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                 </tr><tr>
+                                            <td colspan="8" style="text-align:right;"><b>Previous:</b></td>
+                                            <td class="text-right">
+                                                <input type="text" id="previous" class="form-control text-right" name="previous" value="0.00" readonly="readonly" autocomplete="off">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" style="text-align:right;"><b>Net Total:</b></td>
+                                            <td class="text-right">
+                                                <input type="text" id="n_total" class="form-control text-right" name="n_total" value="0" readonly="readonly" placeholder="" autocomplete="off">
+                                            </td>
+                                        </tr>
+        
+                                                <tr><td style="text-align:right;" colspan="8"><b>Paid Amount:</b></td>
+                                                <td class="text-right">
+                                                    <input type="text" id="paidAmount" onkeyup="calculateSum(),checknum();" class="form-control text-right" name="paid_amount" placeholder="0.00" tabindex="13" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <input type="button" id="full_paid_tab" class="btn btn-warning" value="Full Paid" tabindex="14" onclick="full_paid()" autocomplete="off">
+        
+                                                    <input type="submit" id="add_invoice" class="btn btn-success" name="add-invoice" value="Submit" tabindex="15" autocomplete="off">
+                                                </td>
+        
+                                                <td style="text-align:right;" colspan="7"><b>Due:</b></td>
+                                                <td class="text-right">
+                                                    <input type="text" id="dueAmmount" class="form-control text-right" name="due_amount" value="0.00" readonly="readonly" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <tr id="change_m"><td style="text-align:right;" colspan="8" id="ch_l"><b>Change:</b></td>
+                                                <td class="text-right">
+                                                    <input type="text" id="change" class="form-control text-right" name="change" value="" readonly="readonly" autocomplete="off">
+                                                </td></tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            </form>                </div>
+                    </div>
+                </div>
+    </div>
+</div>
